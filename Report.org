@@ -1,0 +1,48 @@
+Progress Report: Refinement-Based Verification of Gossipsub
+
+Summary:
+
+We have developed open, formal and executable ACL2s models for
+Gossipsub, Broadcastsub, and Floodsub. Each of these models can be
+found here: https://github.com/ankitku/EthGossip
+
+About the models:
+1. Broadcastsub (Broadcastnet.lisp) : It is the high level
+   specification for any P2P pubsub protocol where nodes are allowed
+   to leave or join and where they can subscribe to or unsubscribe
+   from topics. Messages are broadcast in a single step such that each
+   node that subscribe to it receives it.
+
+2. Floodsub (Floodnet.lisp) : It is the specification for flooding
+   in a P2P pubsub network. Nodes maintain subscription information of
+   their neighbors, and forward messages to subscribing neighboring
+   peers.
+
+3. Gossipsub (Gossipsub Folder) : This folder contains the executable
+   specification for the Gossipsub protocol, where nodes can join or
+   leave the network, score their neighbors using locally observable
+   counters, form mesh connections with highly scored neighboring
+   peers, prune low scoring peers, forward full messages to their mesh
+   neighbors, send gossips to non-mesh subscribing peers, have fanouts
+   and perform mesh maintaining activities. We conjectured some
+   properties that a scoring function should satisfy, and found
+   counter-examples to them (scoring-eth2.lisp). We also constructed
+   attack gadgets and used them to show possible attacks, including
+   eclipse and network partition attacks, in the Gossipsub/attacks
+   folder. These attacks are verified on traces of runs of the
+   Gossipsub model on actual Ethereum test net topologies: Goerli,
+   Ropsten and Rinkeby. For these tests we are using actual Eth2.0
+   application parameters to configure our Gossipsub model, such that
+   the test runs represent possible runs of the Ethereum test net.
+
+Next Steps:
+
+We are interested in figuring out the conditions required to show that
+Gossipsub implements Broadcastsub. Our goal in the next step is to
+prove refinement theorems, beginning from the proof of refinement of
+Floodnet (as an implementation of Broadcastnet). We will identify the
+conditions required for this proof and mechanize it in ACL2s. 
+
+We will implement some more models after Floodnet, and use
+compositionality of refinement to show that these models implement
+Broadcastsub.
