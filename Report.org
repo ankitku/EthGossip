@@ -3,8 +3,8 @@ Progress Report: Refinement-Based Verification of Gossipsub
 Summary:
 
 We have developed open, formal and executable ACL2s models for
-Gossipsub, Broadcastsub, and Floodsub. Each of these models can be
-found here: https://github.com/ankitku/EthGossip
+Broadcastsub, Floodsub and Gossipsub. Each of these models are
+available here: https://github.com/ankitku/EthGossip
 
 About the models:
 1. Broadcastsub (Broadcastnet.lisp) : It is the high level
