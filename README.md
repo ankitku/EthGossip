@@ -1,7 +1,7 @@
-Progress Report
+# Progress Report
 Milestone 1: Formalization of refinement models and Ethereum application logic
 
-Executive Summary:
+## Executive Summary:
 
 The main objective of our work is to develop a fundamental, flexible
 and understandable framework for analyzing P2P protocols such as
@@ -68,10 +68,9 @@ Here is a brief overview of the protocols.
    application parameters to configure our Gossipsub model, such that
    the test runs represent possible runs of the Ethereum test net.
 
-Detailed Summary.
+## Detailed Summary.
 
-You can find a detailed summary of our work in the two attached
-papers.
+You can find a detailed summary of our work in these two papers.
 
 The first paper is entitled "Formal Model-Driven Analysis of
 Resilience of GossipSub to Attacks from Misbehaving Peers" and was
